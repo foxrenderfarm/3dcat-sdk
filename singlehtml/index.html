@@ -1371,7 +1371,7 @@ table th {
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>appliType</p></td>
 <td class="text-align:center"><p>String</p></td>
-<td class="text-align:center"><p>应用类型 1/共享GPU，2/独占GPU，3/OpenVR，4/VR</p></td>
+<td class="text-align:center"><p>应用类型 2/共享GPU，1/独占GPU，3/OpenVR，4/VR</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>instanceMax</p></td>
 <td class="text-align:center"><p>String</p></td>
@@ -1403,7 +1403,7 @@ table th {
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>engineType</p></td>
 <td class="text-align:center"><p>int</p></td>
-<td class="text-align:center"><p>引擎类型 2/ue4,unity/1,0/other</p></td>
+<td class="text-align:center"><p>引擎类型 2/unreal,unity/1,0/other</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>initCursorMode</p></td>
 <td class="text-align:center"><p>String</p></td>
@@ -1607,7 +1607,7 @@ table th {
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>hasExtraParam</p></td>
 <td class="text-align:center"><p>String</p></td>
-<td class="text-align:center"><p>接口调用是否附加参数</p></td>
+<td class="text-align:center"><p>接口调用是否附加参数 N(否)、Y(是)</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>appliPath</p></td>
 <td class="text-align:center"><p>String</p></td>
@@ -1655,7 +1655,7 @@ table th {
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>appliType</p></td>
 <td class="text-align:center"><p>String</p></td>
-<td class="text-align:center"><p>应用类型 1/共享GPU，2/独占GPU，3/OpenVR，4/VR</p></td>
+<td class="text-align:center"><p>应用类型 2/共享GPU，1/独占GPU，3/OpenVR，4/VR</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>instanceMax</p></td>
 <td class="text-align:center"><p>String</p></td>
@@ -1687,7 +1687,7 @@ table th {
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>engineType</p></td>
 <td class="text-align:center"><p>int</p></td>
-<td class="text-align:center"><p>引擎类型 2/ue4,unity/1,0/other</p></td>
+<td class="text-align:center"><p>引擎类型 2/unreal,unity/1,0/other</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>initCursorMode</p></td>
 <td class="text-align:center"><p>String</p></td>
@@ -1813,7 +1813,7 @@ table th {
 <tr class="row-even"><td class="text-align:center"><p>hasExtraParam</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>接口调用是否附加参数</p></td>
+<td class="text-align:center"><p>接口调用是否附加参数   N(否)、Y(是) type为1 必传</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>appliPath</p></td>
 <td class="text-align:center"><p>String</p></td>
@@ -1853,16 +1853,16 @@ table th {
 <tr class="row-even"><td class="text-align:center"><p>appliType</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>应用类型 1/共享GPU，2/独占GPU （type为1时必传）</p></td>
+<td class="text-align:center"><p>应用类型 2/共享GPU，1/独占GPU （type为1时必传）</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>instanceMax</p></td>
 <td class="text-align:center"><p>String</p></td>
-<td class="text-align:center"><p>否</p></td>
+<td class="text-align:center"><p>是</p></td>
 <td class="text-align:center"><p>最大并发数量</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>fileSize</p></td>
 <td class="text-align:center"><p>String</p></td>
-<td class="text-align:center"><p>否</p></td>
+<td class="text-align:center"><p>是</p></td>
 <td class="text-align:center"><p>文件大小(单位为字节 )</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>imageId</p></td>
@@ -1878,24 +1878,19 @@ table th {
 <tr class="row-odd"><td class="text-align:center"><p>engineType</p></td>
 <td class="text-align:center"><p>int</p></td>
 <td class="text-align:center"><p>是</p></td>
-<td class="text-align:center"><p>引擎类型 2/ue4,unity/1,0/other</p></td>
+<td class="text-align:center"><p>引擎类型 2/unreal,unity/1,0/other</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>operator</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>wm:只用绝对坐标（程序启动后，鼠标一直显示在应用中，未锁定） hk:只用相对坐标（程序启动后，鼠标锁定在应用中，并被隐藏 sys:独占系统的键鼠  wmhk:点击时用绝对坐标，移动时用相对坐标</p></td>
+<td class="text-align:center"><p>wm:只用绝对坐标（程序启动后，鼠标一直显示在应用中，未锁定） hk:只用相对坐标（程序启动后，鼠标锁定在应用中，并被隐藏 sys:独占系统的键鼠  wmhk:点击时用绝对坐标，移动时用相对坐标鼠标模式，wm,hk,sys,wmhk (type=1必传)</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>鼠标模式，wm,hk,sys,wmhk    (type=1必传)</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>type</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>type</p></td>
 <td class="text-align:center"><p>应用类型</p></td>
 <td class="text-align:center"><p>是</p></td>
 <td class="text-align:center"><p>类型1 3d 2 vr</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>roomId</p></td>
+<tr class="row-even"><td class="text-align:center"><p>roomId</p></td>
 <td class="text-align:center"><p>Long</p></td>
 <td class="text-align:center"><p>否</p></td>
 <td class="text-align:center"><p>房间id (type 为2时才需要房间)</p></td>
@@ -1962,27 +1957,27 @@ table th {
 <tr class="row-even"><td class="text-align:center"><p>graphicsCardType</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>显卡类型，1/1660Ti，2/2080</p></td>
+<td class="text-align:center"><p>显卡类型，1/1660Ti，2/2080 （type为1时必传）</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>initWinSize</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>初始化窗口方式0：按照原始窗口大小显示1：按所选分辨率显示2：尽量填充容器（保存宽高比）3：完全填充容器（裁剪）4：完全填充容器（拉伸）默认为1： 按所选分辨率显示</p></td>
+<td class="text-align:center"><p>初始化窗口方式0：按照原始窗口大小显示1：按所选分辨率显示2：尽量填充容器（保存宽高比）3：完全填充容器（裁剪）4：完全填充容器（拉伸）默认为1： 按所选分辨率显示 （type=1必传）</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>exeFileName</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>执行文件名称(需调用/api/3dcat/file/getExePath接口获取)</p></td>
+<td class="text-align:center"><p>可执行文件名称(需调用/api/3dcat/file/getExePath接口获取)</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>hasExtraParam</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>接口调用是否附加参数</p></td>
+<td class="text-align:center"><p>接口调用是否附加参数   N(否)、Y(是) type为1 必传</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>virtualComponent</p></td>
 <td class="text-align:center"><p>int</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>控制虚拟控件显示 1 (默认),2 ,3 都不显示</p></td>
+<td class="text-align:center"><p>控制虚拟控件显示 1 (默认),2 ,3 都不显示   （type为1时必传）</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>gpuOccupancy</p></td>
 <td class="text-align:center"><p>int</p></td>
@@ -2007,42 +2002,32 @@ table th {
 <tr class="row-odd"><td class="text-align:center"><p>appliType</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>应用类型 1/共享GPU，2/独占GPU，3/OpenVR，4/VR</p></td>
+<td class="text-align:center"><p>应用类型 2/共享GPU，1/独占GPU （type为1时必传）</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>instanceMax</p></td>
 <td class="text-align:center"><p>String</p></td>
-<td class="text-align:center"><p>否</p></td>
+<td class="text-align:center"><p>是</p></td>
 <td class="text-align:center"><p>最大并发数量</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>fileSize</p></td>
-<td class="text-align:center"><p>String</p></td>
-<td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>文件大小(单位为字节 )</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>imageId</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>imageId</p></td>
 <td class="text-align:center"><p>Long</p></td>
 <td class="text-align:center"><p>否</p></td>
 <td class="text-align:center"><p>图片上传时返回的id(当picUrl有值为必填)</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>picUrl</p></td>
+<tr class="row-even"><td class="text-align:center"><p>picUrl</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
 <td class="text-align:center"><p>应用缩略图地址</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>engineType</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>engineType</p></td>
 <td class="text-align:center"><p>int</p></td>
-<td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>引擎类型 2/ue4,unity/1,0/other</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>initCursorMode</p></td>
-<td class="text-align:center"><p>String</p></td>
-<td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>鼠标模式，默认是0。0：非锁定模式。1：锁定模式</p></td>
+<td class="text-align:center"><p>是</p></td>
+<td class="text-align:center"><p>引擎类型 2/unreal,unity/1,0/other</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>operator</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>鼠标模式，wm,hk,sys,wmhk</p></td>
+<td class="text-align:center"><p>wm:只用绝对坐标（程序启动后，鼠标一直显示在应用中，未锁定） hk:只用相对坐标（程序启动后，鼠标锁定在应用中，并被隐藏 sys:独占系统的键鼠  wmhk:点击时用绝对坐标，移动时用相对坐标鼠标模式，wm,hk,sys,wmhk (type=1必传)</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>type</p></td>
 <td class="text-align:center"><p>应用类型</p></td>
@@ -2052,7 +2037,7 @@ table th {
 <tr class="row-even"><td class="text-align:center"><p>roomId</p></td>
 <td class="text-align:center"><p>Long</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>房间id</p></td>
+<td class="text-align:center"><p>房间id (type 为2时才需要房间)</p></td>
 </tr>
 </tbody>
 </table>
@@ -2106,7 +2091,7 @@ table th {
 <tr class="row-even"><td class="text-align:center"><p>appliPath</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>是</p></td>
-<td class="text-align:center"><p>固定值 “/”</p></td>
+<td class="text-align:center"><p>固定值”/”</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>description</p></td>
 <td class="text-align:center"><p>String</p></td>
@@ -2121,27 +2106,27 @@ table th {
 <tr class="row-odd"><td class="text-align:center"><p>graphicsCardType</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>显卡类型，1/1660Ti，2/2080</p></td>
+<td class="text-align:center"><p>显卡类型，1/1660Ti，2/2080 （type为1时必传）</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>initWinSize</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>初始化窗口方式0：按照原始窗口大小显示1：按所选分辨率显示2：尽量填充容器（保存宽高比）3：完全填充容器（裁剪）4：完全填充容器（拉伸）默认为1： 按所选分辨率显示</p></td>
+<td class="text-align:center"><p>初始化窗口方式0：按照原始窗口大小显示1：按所选分辨率显示2：尽量填充容器（保存宽高比）3：完全填充容器（裁剪）4：完全填充容器（拉伸）默认为1： 按所选分辨率显示 （type=1必传）</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>exeFileName</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>执行文件名称(需调用/api/3dcat/file/getExePath接口获取)</p></td>
+<td class="text-align:center"><p>可执行文件名称(需调用/api/3dcat/file/getExePath接口获取)</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>hasExtraParam</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>接口调用是否附加参数</p></td>
+<td class="text-align:center"><p>接口调用是否附加参数   N(否)、Y(是) type为1 必传</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>virtualComponent</p></td>
 <td class="text-align:center"><p>int</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>控制虚拟控件显示 1 (默认),2 ,3 都不显示</p></td>
+<td class="text-align:center"><p>控制虚拟控件显示 1 (默认),2 ,3 都不显示   （type为1时必传）</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>gpuOccupancy</p></td>
 <td class="text-align:center"><p>int</p></td>
@@ -2166,16 +2151,16 @@ table th {
 <tr class="row-even"><td class="text-align:center"><p>appliType</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>应用类型 1/共享GPU，2/独占GPU，3/OpenVR，4/VR</p></td>
+<td class="text-align:center"><p>应用类型 2/共享GPU，1/独占GPU （type为1时必传）</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>instanceMax</p></td>
 <td class="text-align:center"><p>String</p></td>
-<td class="text-align:center"><p>否</p></td>
+<td class="text-align:center"><p>是</p></td>
 <td class="text-align:center"><p>最大并发数量</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>fileSize</p></td>
 <td class="text-align:center"><p>String</p></td>
-<td class="text-align:center"><p>否</p></td>
+<td class="text-align:center"><p>是</p></td>
 <td class="text-align:center"><p>文件大小(单位为字节 )</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>imageId</p></td>
@@ -2190,28 +2175,23 @@ table th {
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>engineType</p></td>
 <td class="text-align:center"><p>int</p></td>
-<td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>引擎类型 2/ue4,unity/1,0/other</p></td>
+<td class="text-align:center"><p>是</p></td>
+<td class="text-align:center"><p>引擎类型 2/unreal,unity/1,0/other</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>initCursorMode</p></td>
+<tr class="row-even"><td class="text-align:center"><p>operator</p></td>
 <td class="text-align:center"><p>String</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>鼠标模式，默认是0。0：非锁定模式。1：锁定模式</p></td>
+<td class="text-align:center"><p>wm:只用绝对坐标（程序启动后，鼠标一直显示在应用中，未锁定） hk:只用相对坐标（程序启动后，鼠标锁定在应用中，并被隐藏 sys:独占系统的键鼠  wmhk:点击时用绝对坐标，移动时用相对坐标鼠标模式，wm,hk,sys,wmhk (type=1必传)</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>operator</p></td>
-<td class="text-align:center"><p>String</p></td>
-<td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>鼠标模式，wm,hk,sys,wmhk</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>type</p></td>
-<td class="text-align:center"><p>int</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>type</p></td>
+<td class="text-align:center"><p>应用类型</p></td>
 <td class="text-align:center"><p>是</p></td>
 <td class="text-align:center"><p>类型1 3d 2 vr</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>roomId</p></td>
+<tr class="row-even"><td class="text-align:center"><p>roomId</p></td>
 <td class="text-align:center"><p>Long</p></td>
 <td class="text-align:center"><p>否</p></td>
-<td class="text-align:center"><p>房间id</p></td>
+<td class="text-align:center"><p>房间id (type 为2时才需要房间)</p></td>
 </tr>
 </tbody>
 </table>
